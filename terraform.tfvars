@@ -1,7 +1,7 @@
 # กรอกข้อมูลสำหรับเชื่อมต่อ vCenter ของคุณ
 vsphere_user     = "surayossri@vsphere.local" # <--- แก้ไขเป็น User ของคุณ
 vsphere_password = "Addminit@ti0n"          # <--- แก้ไขเป็น Password ของคุณ
-vsphere_server   = "192.168.172.10"
+vsphere_server   = "192.168.170.10"
 
 # กรอกข้อมูล vSphere Objects ตามโจทย์
 vsphere_datacenter = "Datacenter"             # <--- แก้ไขเป็นชื่อ Datacenter ของคุณ
