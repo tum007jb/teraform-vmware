@@ -1,21 +1,68 @@
 # ===================================================================
-# Resource: สร้าง Virtual Machine จาก Template (ฉบับแก้ไข)
+# Terraform และ Provider Configuration
+# ===================================================================
+terraform {
+  required_providers {
+    vsphere = {
+      source  = "hashicorp/vsphere"
+      version = "~> 2.0"
+    }
+  }
+}
+
+provider "vsphere" {
+  user           = var.vsphere_user
+  password       = var.vsphere_password
+  vsphere_server = var.vsphere_server
+  allow_unverified_ssl = true
+}
+
+# ===================================================================
+# Data Sources: ดึงข้อมูล vSphere Objects ที่มีอยู่แล้ว
+# ===================================================================
+data "vsphere_datacenter" "dc" {
+  name = var.vsphere_datacenter
+}
+
+data "vsphere_datastore" "datastore" {
+  name          = var.vsphere_datastore
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_host" "host" {
+  name          = var.vsphere_host
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_network" "network" {
+  name          = var.vsphere_network
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_virtual_machine" "template" {
+  name          = var.vsphere_template
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+# DATA SOURCE: ค้นหา Folder ที่จะใช้เก็บ VM
+data "vsphere_folder" "vm_folder" {
+  path = var.vm_folder_path
+}
+
+# ===================================================================
+# Resource: สร้าง Virtual Machine จาก Template
 # ===================================================================
 resource "vsphere_virtual_machine" "vm" {
   name             = var.vm_name
   resource_pool_id = data.vsphere_host.host.resource_pool_id
   datastore_id     = data.vsphere_datastore.datastore.id
+  folder           = data.vsphere_folder.vm_folder.path # <<<<<<<<<<< เพิ่มตรงนี้
 
   # กำหนดค่า Hardware
   num_cpus = var.vm_cpus
   memory   = var.vm_memory
   guest_id = data.vsphere_virtual_machine.template.guest_id
-
-  # (Best Practice) กำหนด Firmware ให้ตรงกับ Template
-  firmware = data.vsphere_virtual_machine.template.firmware
-  
-  # ถ้า Template เป็น EFI อาจต้องกำหนด Secure Boot ให้ตรงกันด้วย
-  # efi_secure_boot_enabled = data.vsphere_virtual_machine.template.efi_secure_boot_enabled
+  firmware = data.vsphere_virtual_machine.template.firmware # <<<< แก้ไขจากครั้งก่อน
 
   # กำหนดค่า Network
   network_interface {
@@ -23,10 +70,9 @@ resource "vsphere_virtual_machine" "vm" {
     adapter_type = data.vsphere_virtual_machine.template.network_interface_types[0]
   }
 
-  # ----> ลบบล็อก disk {} ทั้งหมดออกจากส่วนนี้ <----
-  # Terraform จะทำการ clone disk จาก template ให้โดยอัตโนมัติเมื่อใช้ clone {}
+  # ไม่ต้องมีบล็อก disk {} เพราะเราจะ clone จาก template
 
-  # ส่วนสำคัญ: การ Clone และปรับแต่ง (Customize)
+  # การ Clone และปรับแต่ง (Customize)
   clone {
     template_uuid = data.vsphere_virtual_machine.template.id
 

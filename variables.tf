@@ -37,6 +37,13 @@ variable "vsphere_network" {
   description = "The name of the network/port group."
 }
 
+# ตัวแปรสำหรับระบุ Folder ของ VM
+variable "vm_folder_path" {
+  type        = string
+  description = "The full path of the folder to place the VM in (e.g., 'Folder/SubFolder')."
+  default     = "DSO/vm/Tum-VM/RKE" # ตั้งค่า default ตามโจทย์
+}
+
 variable "vsphere_template" {
   type        = string
   description = "The name of the VM template to clone from."
