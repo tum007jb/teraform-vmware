@@ -4,7 +4,7 @@ vsphere_password = "Addminit@ti0n"          # <--- แก้ไขเป็น P
 vsphere_server   = "192.168.170.10"
 
 # กรอกข้อมูล vSphere Objects ตามโจทย์
-vsphere_datacenter = "Datacenter"             # <--- แก้ไขเป็นชื่อ Datacenter ของคุณ
+vsphere_datacenter = "DSO"             # <--- แก้ไขเป็นชื่อ Datacenter ของคุณ
 vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
 vsphere_network    = "VLAN 172"                 # <--- แก้ไขเป็นชื่อ Port Group ที่ถูกต้อง
