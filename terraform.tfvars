@@ -7,7 +7,7 @@ vsphere_server   = "192.168.170.10"
 vsphere_datacenter = "DSO"             # <--- แก้ไขเป็นชื่อ Datacenter ของคุณ
 vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
-vsphere_network    = "VLAN 172"                 # <--- แก้ไขเป็นชื่อ Port Group ที่ถูกต้อง
+vsphere_network    = "VLAN172"                 # <--- แก้ไขเป็นชื่อ Port Group ที่ถูกต้อง
 vsphere_template   = "DSO-RHEL9-RKE-template"
 
 # กรอกข้อมูลสำหรับ VM ใหม่
