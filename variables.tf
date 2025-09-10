@@ -41,7 +41,7 @@ variable "vsphere_network" {
 variable "vm_folder_path" {
   type        = string
   description = "The full path of the folder to place the VM in (e.g., 'Folder/SubFolder')."
-  default     = "DSO/vm/Tum-VM/RKE" # ตั้งค่า default ตามโจทย์
+  default     = "Tum-VM/RKE" # ตั้งค่า default ตามโจทย์
 }
 
 variable "vsphere_template" {
