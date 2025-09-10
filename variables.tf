@@ -1,4 +1,6 @@
+# -------------------------------------
 # ตัวแปรสำหรับ vCenter Connection
+# -------------------------------------
 variable "vsphere_user" {
   type        = string
   description = "vCenter username."
@@ -16,7 +18,9 @@ variable "vsphere_server" {
   description = "vCenter server FQDN or IP address."
 }
 
+# -------------------------------------
 # ตัวแปรสำหรับ vSphere Objects
+# -------------------------------------
 variable "vsphere_datacenter" {
   type        = string
   description = "The name of the datacenter in vCenter."
@@ -37,23 +41,28 @@ variable "vsphere_network" {
   description = "The name of the network/port group."
 }
 
-# ตัวแปรสำหรับระบุ Folder ของ VM
-variable "vm_folder_path" {
-  type        = string
-  description = "The full path of the folder to place the VM in (e.g., 'Folder/SubFolder')."
-  default     = "Tum-VM" # ตั้งค่า default ตามโจทย์
-}
-
 variable "vsphere_template" {
   type        = string
   description = "The name of the VM template to clone from."
 }
 
+variable "vm_folder_path" {
+  type        = string
+  description = "The full path of the folder to place the VM in."
+}
+
+# -------------------------------------
 # ตัวแปรสำหรับ VM ใหม่
+# -------------------------------------
 variable "vm_name" {
   type        = string
-  description = "The name for the new virtual machine."
-  default     = "my-rhel9-vm"
+  description = "The name for the new virtual machine in vCenter."
+}
+
+# <<<<<<<<<<< เพิ่มตัวแปรใหม่สำหรับ Hostname <<<<<<<<<<<
+variable "vm_hostname" {
+  type        = string
+  description = "The hostname for the Guest OS."
 }
 
 variable "vm_cpus" {
@@ -74,7 +83,9 @@ variable "vm_domain" {
   default     = "local"
 }
 
+# -------------------------------------
 # ตัวแปรสำหรับ Network Customization
+# -------------------------------------
 variable "vm_ipv4_address" {
   type        = string
   description = "The static IPv4 address for the new VM."

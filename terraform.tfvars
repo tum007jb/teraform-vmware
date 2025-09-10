@@ -12,6 +12,7 @@ vsphere_template   = "DSO-RHEL9-RKE-template"
 
 # กรอกข้อมูลสำหรับ VM ใหม่
 vm_name          = "DSO-RHEL9-RKE-CPE01"
+vm_hostname      = "master.rke.dso.local"
 vm_ipv4_address  = "192.168.172.81"           # <--- กำหนด IP ที่ต้องการ
 vm_ipv4_gateway  = "192.168.172.1"            # <--- แก้ไขเป็น Gateway ที่ถูกต้อง
 vm_dns_servers   = ["192.168.170.11"] # <--- แก้ไขเป็น DNS Server ของคุณ
