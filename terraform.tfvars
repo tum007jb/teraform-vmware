@@ -9,7 +9,7 @@ vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
 vsphere_network    = "VLAN172"                 # <--- แก้ไขเป็นชื่อ Port Group ที่ถูกต้อง
 vsphere_template   = "DSO-RHEL9-RKE-template"
-vm_folder_path     = "Tum-VM/RKE"
+vm_folder_path     = "Tum-VM"
 
 # กรอกข้อมูลสำหรับ VM ใหม่
 vm_name          = "DSO-RHEL9-RKE-CPE01"
