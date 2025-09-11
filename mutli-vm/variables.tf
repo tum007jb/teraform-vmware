@@ -15,7 +15,9 @@ variable "vsphere_network" { #...
 }
 variable "vsphere_template" { #...
 }
-variable "vm_folder_path" { #...
+variable "vm_folder_path" {
+  type        = string
+  description = "The full path of the folder to place the VMs in."
 }
 
 # -------------------------------------
