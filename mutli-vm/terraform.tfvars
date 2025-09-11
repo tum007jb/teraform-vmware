@@ -10,7 +10,7 @@ vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
 vsphere_network    = "VLAN172"
 vsphere_template   = "DSO-RHEL9-RKE-template"
-vm_folder_path     = "DSO/vm/Tum-VM/RKE"
+vm_folder_path     = "Tum-VM/RKE"
 
 # ====================================================
 # ข้อมูล Network ที่ใช้ร่วมกัน
@@ -23,28 +23,28 @@ vm_dns_servers   = ["192.168.170.11"]
 # ====================================================
 vms = {
   "rke-node-01" = {
-    name       = "rke-prod-node-01"
-    hostname   = "rke-node-01"
-    ip_address = "192.168.172.51"
+    name       = "DSO-RHEL9-RKE-MSWL01"
+    hostname   = "master1wl"
+    ip_address = "192.168.172.75"
   },
   "rke-node-02" = {
-    name       = "rke-prod-node-02"
-    hostname   = "rke-node-02"
-    ip_address = "192.168.172.52"
+    name       = "DSO-RHEL9-RKE-MSWL02"
+    hostname   = "master2wl"
+    ip_address = "192.168.172.76"
   },
   "rke-node-03" = {
-    name       = "rke-prod-node-03"
-    hostname   = "rke-node-03"
-    ip_address = "192.168.172.53"
+    name       = "DSO-RHEL9-RKE-MSWL03"
+    hostname   = "master3wl"
+    ip_address = "192.168.172.77"
   },
   "rke-node-04" = {
-    name       = "rke-prod-node-04"
-    hostname   = "rke-node-04"
-    ip_address = "192.168.172.54"
+    name       = "DSO-RHEL9-RKE-WKWL01"
+    hostname   = "worker1wl"
+    ip_address = "192.168.172.78"
   },
   "rke-node-05" = {
-    name       = "rke-prod-node-05"
-    hostname   = "rke-node-05"
-    ip_address = "192.168.172.55"
+    name       = "DSO-RHEL9-RKE-WKWL01"
+    hostname   = "worker2wl"
+    ip_address = "192.168.172.5579"
   }
 }
