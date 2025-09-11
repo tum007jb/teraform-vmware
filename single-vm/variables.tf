@@ -68,13 +68,13 @@ variable "vm_hostname" {
 variable "vm_cpus" {
   type        = number
   description = "Number of CPUs for the new VM."
-  default     = 2
+  default     = 4
 }
 
 variable "vm_memory" {
   type        = number
   description = "Memory in MB for the new VM."
-  default     = 4096
+  default     = 16384
 }
 
 variable "vm_domain" {
