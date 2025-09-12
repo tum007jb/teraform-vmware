@@ -25,26 +25,26 @@ vms = {
   "rke-node-01" = {
     name       = "DSO-RHEL9-RKE-MSWL01"
     hostname   = "master1wl"
-    ip_address = "192.168.172.75"
+    ip_address = "192.168.172.85"
   },
   "rke-node-02" = {
     name       = "DSO-RHEL9-RKE-MSWL02"
     hostname   = "master2wl"
-    ip_address = "192.168.172.76"
+    ip_address = "192.168.172.86"
   },
   "rke-node-03" = {
     name       = "DSO-RHEL9-RKE-MSWL03"
     hostname   = "master3wl"
-    ip_address = "192.168.172.77"
+    ip_address = "192.168.172.87"
   },
   "rke-node-04" = {
     name       = "DSO-RHEL9-RKE-WKWL01"
     hostname   = "worker1wl"
-    ip_address = "192.168.172.78"
+    ip_address = "192.168.172.88"
   },
   "rke-node-05" = {
     name       = "DSO-RHEL9-RKE-WKWL02"
     hostname   = "worker2wl"
-    ip_address = "192.168.172.79"
+    ip_address = "192.168.172.89"
   }
 }
