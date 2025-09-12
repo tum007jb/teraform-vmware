@@ -5,7 +5,7 @@ vsphere_user     = "surayossri@vsphere.local"
 vsphere_password = "Addminit@ti0n"
 vsphere_server   = "192.168.170.10"
 
-vsphere_datacenter = "Datacenter"
+vsphere_datacenter = "DSO"
 vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
 vsphere_network    = "VLAN172"
