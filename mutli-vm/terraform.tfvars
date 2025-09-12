@@ -43,8 +43,8 @@ vms = {
     ip_address = "192.168.172.78"
   },
   "rke-node-05" = {
-    name       = "DSO-RHEL9-RKE-WKWL01"
+    name       = "DSO-RHEL9-RKE-WKWL02"
     hostname   = "worker2wl"
-    ip_address = "192.168.172.5579"
+    ip_address = "192.168.172.79"
   }
 }
