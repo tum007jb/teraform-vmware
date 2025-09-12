@@ -44,7 +44,7 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 data "vsphere_folder" "vm_folder" {
-  path = var.vsphere_folder_path
+  path = var.vm_folder_path
 }
 
 # ===================================================================
