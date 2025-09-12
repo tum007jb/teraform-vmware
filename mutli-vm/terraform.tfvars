@@ -10,7 +10,7 @@ vsphere_host       = "192.168.117.141"
 vsphere_datastore  = "SESX1-DATA1"
 vsphere_network    = "VLAN172"
 vsphere_template   = "DSO-RHEL9-RKE-template"
-vm_folder_path     = "DSO/vn/Tum-VM/RKE"
+vm_folder_path     = "DSO/vm/Tum-VM/RKE"
 
 # ====================================================
 # ข้อมูล Network ที่ใช้ร่วมกัน
